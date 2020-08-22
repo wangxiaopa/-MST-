@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>最小生成树MST主页</title>
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="iconfont.css">
+	<!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
+	<script src="index.js"></script>
+	<script src="jquery-3.4.1.min.js"></script>
+	<style>
+		body
+		{
+			background-color: gray;/*在加载时可以先这样设置*/
+			background-image:url(images/13.jpg);
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+			color: white;
+		}
+	</style>
+	<script>/*百度统计*/
+		var _hmt = _hmt || [];
+		(function() {
+  		var hm = document.createElement("script");
+  		hm.src = "https://hm.baidu.com/hm.js?d5a07a9bf06fb7059b98efac07be99fb";
+  		var s = document.getElementsByTagName("script")[0]; 
+  		s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
+<body onload="hide()">
+
+	<div class="sm-container">
+    <div class="change">
+    	<img src="icons/shezhi.png" class="show-btn"></img>
+      <img src="icons/linggan.png" onclick="kuaijiefangwen()" class="logo" title="crtl+D即刻收藏">
+      <img src="icons/tupian.png" onclick="bizhitougao()" class="logo" title="壁纸投稿">
+      <img src="icons/xiaoxi.png" onclick="yijianfankui()" class="logo" title="意见反馈">
+      <!-- <img src="icons/tupian.png" onclick="changeWallpaper();" class="logo"> -->
+      
+
+    </div>
+	</div>
+
+    <form class="searchform" autocomplete="off" onsubmit="return false;">
+    <!-- onkeydown="if(event.keyCode==13){return false}; -->
+    <!-- autocomplete这一属性是历史记录 -->
+       	<input type="text" class="searchinput" placeholder=" " onkeypress="if(event.keyCode==13){baidu();}" id="center">
+       	<div class="searchWeb">
+       		<a style="cursor: pointer" class="iconfont icon-baidu" onclick="baidu()"></a>
+       		<a style="cursor: pointer" class="iconfont icon-google" onclick="google()"></a>
+       		<a style="cursor: pointer" class="iconfont icon-bing" onclick="bing()"></a>
+       		<a style="cursor: pointer" class="iconfont icon-zhihu" onclick="zhihu()"></a>
+       		<a style="cursor: pointer" class="iconfont icon-douban" onclick="douban()"></a>
+       		<a style="cursor: pointer" class="iconfont icon-bilibili" onclick="bilibili()"></a>
+       		<a style="cursor: pointer" class="iconfont icon-Wechat" onclick="weixin()"></a>
+       		<a style="cursor: pointer" class="iconfont icon-weibo" onclick="weibo()"></a>
+		   </div>
+	</form>
+
+
+	<script>
+    $(".show-btn").click(function(){  //这个括号里面是被点击的东西的class
+      $(".logo").fadeToggle("fast");  //括号里是消失的class
+    });
+	</script>
+
+	<script>
+/*	搞定了，用两个步骤来实现
+	1.设置一个函数，每一段时间执行一次
+	2.用focus来聚焦
+*/
+	var myVar = setInterval(function(){ ceshi() }, 1000);
+ 
+	function ceshi() {
+  		document.getElementById('center').focus();
+	}
+
+</script>
+<p style="
+position:fixed;
+bottom:1px;
+font-size:0.5px;
+">
+	<a href="http://www.beian.miit.gov.cn/">京ICP备19046765号</a>
+</p>
+</body>
+</html>

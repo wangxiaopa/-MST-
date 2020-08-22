@@ -1,0 +1,73 @@
+	*{
+	margin: 0;
+	padding: 0;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	}
+
+	.searchform{
+	 width: 550px;
+	 height: 44px;
+	 border: 1.5px solid transparent;
+	 border-color: rgba(0,0,0,0);
+	 border-radius: 22px;
+	 outline: none;
+	 
+	/*阴影，能有悬浮效果*/
+	/*box-shadow: 0 15px 25px rgba(0,0,0,.5);*/
+	 
+	/*以下是绝对定位*/
+	position: fixed;
+	top: 38%;
+	/*top:27.5%;*/
+	/* 水平居中的两种方式 */
+	left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto; 
+
+	}
+	.searchinput{
+	 width: 550px;
+	 height: 44px;
+	 border: 1.5px solid white;
+	 border-radius: 22px;
+	 margin: 0 auto;
+	 font-size: 110%;
+	 font-family: Verdana;
+	 text-align: center;
+	 outline: none;         /*让方形搜索边框不显示*/
+	 background-color: rgba(255,255,255,0.4);	/*！！！搜索框透明*/
+	 border-color: rgba(0,0,0,0);	/*搜索框的颜色，把它设置成透明*/
+	}
+
+	.searchWeb{
+	 list-style: none;
+	 float: left;
+	}
+
+	.searchWeb a{
+	 line-height: 60px;
+	 width: 64.5px;
+	 font-size: 30px;
+	 text-align: center;
+	 display: inline-block;
+	}
+	.sm-container
+	{
+	/*以下是绝对定位*/
+	position: fixed;
+	top: 10px;
+	left: 30px;
+	}
+
+	.logo {
+	width: 30px;    /*设置了大小*/
+	margin: 13.3px;   /*隔开logo距离*/
+	}
+	.show-btn{
+		width: 30px;    /*设置了大小*/
+		margin: 13.3px;
+	}
