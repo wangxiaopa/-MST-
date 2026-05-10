@@ -18,7 +18,7 @@
                 name: "百度",
                 iconClass: "icon-baidu",
                 searchUrl: "https://www.baidu.com/s?wd={query}",
-                homeUrl: "https://www.baidu.com/",
+                homeUrl: "",
                 enabled: true
             },
             {
@@ -26,7 +26,7 @@
                 name: "Google",
                 iconClass: "icon-google",
                 searchUrl: "https://www.google.com.hk/search?q={query}",
-                homeUrl: "https://www.google.com.hk/",
+                homeUrl: "",
                 enabled: true
             },
             {
@@ -34,7 +34,7 @@
                 name: "Bing",
                 iconClass: "icon-bing",
                 searchUrl: "https://www.bing.com/search?q={query}",
-                homeUrl: "https://www.bing.com/",
+                homeUrl: "",
                 enabled: true
             },
             {
@@ -173,6 +173,12 @@
             : clone(DEFAULT_CONFIG.searchEngines);
         if (normalized.searchEngines.length === 0) {
             normalized.searchEngines = clone(DEFAULT_CONFIG.searchEngines);
+        }
+        var hasEnabledEngine = normalized.searchEngines.some(function (engine) {
+            return engine.enabled;
+        });
+        if (!hasEnabledEngine) {
+            normalized.searchEngines[0].enabled = true;
         }
 
         normalized.quickActions = Array.isArray(source.quickActions)

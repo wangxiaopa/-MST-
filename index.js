@@ -20,7 +20,7 @@
         if (!query && engine.homeUrl) {
             return engine.homeUrl;
         }
-        return engine.searchUrl.replace("{query}", query);
+        return engine.searchUrl.split("{query}").join(query);
     }
 
     function openSearch(engineId) {
