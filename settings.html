@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人设置 - 最小生成树MST主页</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <header class="settings-header">
+        <div>
+            <p class="eyebrow">MST Home</p>
+            <h1>个人设置</h1>
+            <p>编辑你的搜索站点、快捷入口和主页外观。配置会保存在当前浏览器中。</p>
+        </div>
+        <a class="back-link" href="index.html">返回主页</a>
+    </header>
+
+    <main class="settings-layout">
+        <section class="card">
+            <div class="card-heading">
+                <div>
+                    <h2>主页信息</h2>
+                    <p>用于控制首页显示的名称、文案、背景和默认搜索。</p>
+                </div>
+                <button type="button" class="secondary" id="resetConfig">恢复默认</button>
+            </div>
+
+            <form class="grid-form" id="profileForm">
+                <label>
+                    个人标识
+                    <input type="text" name="name" placeholder="例如 MST">
+                </label>
+                <label>
+                    主页标题
+                    <input type="text" name="title" placeholder="例如 我的搜索主页">
+                </label>
+                <label>
+                    副标题
+                    <input type="text" name="subtitle" placeholder="显示在标题下方">
+                </label>
+                <label>
+                    搜索框提示
+                    <input type="text" name="placeholder" placeholder="输入关键词后按回车搜索">
+                </label>
+                <label class="wide">
+                    背景地址
+                    <input type="text" name="background" placeholder="images/13.jpg 或 https://...">
+                </label>
+                <label>
+                    从本地选择背景
+                    <input type="file" id="backgroundFile" accept="image/*">
+                </label>
+                <label>
+                    强调色
+                    <input type="color" name="accentColor">
+                </label>
+                <label>
+                    默认搜索
+                    <select name="defaultEngineId" id="defaultEngine"></select>
+                </label>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="card-heading">
+                <div>
+                    <h2>搜索网站</h2>
+                    <p>搜索地址必须包含 <code>{query}</code>，它会被替换成搜索词。</p>
+                </div>
+                <button type="button" class="secondary" id="addEngine">添加搜索网站</button>
+            </div>
+            <div class="item-list" id="engineList"></div>
+        </section>
+
+        <section class="card">
+            <div class="card-heading">
+                <div>
+                    <h2>快捷入口</h2>
+                    <p>配置左上角展开后的按钮，支持打开链接或显示收藏提示。</p>
+                </div>
+                <button type="button" class="secondary" id="addAction">添加快捷入口</button>
+            </div>
+            <div class="item-list" id="actionList"></div>
+        </section>
+
+        <section class="card">
+            <div class="card-heading">
+                <div>
+                    <h2>导入 / 导出</h2>
+                    <p>可以复制配置到其它浏览器，或粘贴已有配置覆盖当前设置。</p>
+                </div>
+                <button type="button" class="secondary" id="exportConfig">导出配置</button>
+            </div>
+            <textarea id="configText" rows="8" spellcheck="false" placeholder="导出的 JSON 配置会显示在这里，也可以粘贴配置后点击导入。"></textarea>
+            <div class="actions-row">
+                <button type="button" class="secondary" id="importConfig">导入配置</button>
+                <button type="button" class="primary" id="saveConfig">保存设置</button>
+            </div>
+            <p class="message" id="message" role="status"></p>
+        </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>
